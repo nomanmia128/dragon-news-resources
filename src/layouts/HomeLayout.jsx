@@ -5,6 +5,8 @@ import Navber from '../componenets/Navber';
 import LeftNavber from '../componenets/layout-component/LeftNavber';
 import RightNav from '../componenets/layout-component/RightNav';
 
+import { Outlet } from 'react-router-dom';
+
 const HomeLayout = () => {
     return (
         <div className='font-poppins'>
@@ -24,7 +26,9 @@ const HomeLayout = () => {
                 <aside className='left col-span-3'>
                     <LeftNavber></LeftNavber>
                 </aside>
-                <section className='col-span-6'>Main Content</section>
+                <section className='col-span-6'>
+                   <Outlet></Outlet>
+                </section>
                 <aside className='left col-span-3'>
                     <RightNav></RightNav>
                 </aside>
