@@ -2,6 +2,7 @@ import React from "react";
 import { FaRegEye } from "react-icons/fa"; // Eye icon
 import { BsShare } from "react-icons/bs"; // Share icon
 import { AiFillStar } from "react-icons/ai"; // Star icon
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
     const {
@@ -47,11 +48,11 @@ const NewsCard = ({ news }) => {
             {/* Details */}
             <p className="text-sm text-gray-600 mb-4">
                 {news.details.length > 150 ? `${details.slice(0, 150)}...` : details}
-                <span className="text-blue-500 font-medium cursor-pointer">
-                    {" "}
-                    Read More
-                </span>
             </p>
+            <span className="text-blue-500 font-medium cursor-pointer pb-5">
+                {" "}
+                <Link to={`/news/${news._id}`} className="text-primary"> Read More</Link>
+            </span>
 
             {/* Footer: Rating and Views */}
             <div className="flex justify-between items-center">
